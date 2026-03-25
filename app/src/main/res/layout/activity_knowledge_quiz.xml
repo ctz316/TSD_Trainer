@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Score Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="#1A1A1A"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#DC143C"
+        app:strokeWidth="1dp">
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Score: 0 / 0  |  Streak: 0"
+            android:textColor="#DC143C"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Question Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="#1A1A1A"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#DC143C"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QUESTION"
+                android:textColor="#DC143C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/tvQuizQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Loading question..."
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Answer Cards (2x2 grid) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <!-- Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAnswer1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#1A1A1A"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#444444"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:id="@+id/tvAnswer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="A" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAnswer2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#1A1A1A"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#444444"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:id="@+id/tvAnswer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="B" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAnswer3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#1A1A1A"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#444444"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:id="@+id/tvAnswer3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="C" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAnswer4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#1A1A1A"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#444444"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:id="@+id/tvAnswer4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="D" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Feedback -->
+    <TextView
+        android:id="@+id/tvFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text=""
+        android:visibility="gone" />
+
+    <!-- Next Question Button -->
+    <Button
+        android:id="@+id/btnNextQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#DC143C"
+        android:text="Next Question ➡️"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+</LinearLayout>

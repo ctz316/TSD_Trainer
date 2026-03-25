@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Filter Checkboxes -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="#1A1A1A"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#DC143C"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbCurrentBeltOnly"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="#DC143C"
+                android:text="Current Belt Only"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbFavoritesOnly"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="#DC143C"
+                android:text="Favorites Only"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Duration Selector — tap to start that session length -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="#1A1A1A"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TAP TO START SESSION"
+                android:textColor="#DC143C"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:gravity="center"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn5min"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="#2A2A2A"
+                    android:text="5 min"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btn10min"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="#2A2A2A"
+                    android:text="10 min"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btn15min"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="#2A2A2A"
+                    android:text="15 min"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btn20min"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="#2A2A2A"
+                    android:text="20 min"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Main Practice Card (fills remaining space) -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="#1A1A1A"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#DC143C"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <!-- Session countdown timer (large, prominent) — hidden until session starts -->
+            <TextView
+                android:id="@+id/tvSessionTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05:00"
+                android:textColor="#DC143C"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <!-- Per-combination countdown — hidden until session starts -->
+            <TextView
+                android:id="@+id/tvComboCountdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next in 30s"
+                android:textColor="#808080"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone" />
+
+            <!-- Current combination -->
+            <TextView
+                android:id="@+id/tvCombination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Tap a duration above to begin"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:lineSpacingMultiplier="1.4" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Favorite Button (only action button remaining) -->
+    <Button
+        android:id="@+id/btnFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:backgroundTint="#2A2A2A"
+        android:text="☆ Favorite"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

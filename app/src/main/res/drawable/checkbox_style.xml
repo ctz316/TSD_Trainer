@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Checked state -->
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- BLUE background box -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#1E90FF"/>
+                    <corners android:radius="3dp"/>
+                    <size android:width="24dp" android:height="24dp"/>
+                </shape>
+            </item>
+            <!-- White checkmark - long stroke -->
+            <item
+                android:width="3dp"
+                android:height="10dp"
+                android:gravity="center"
+                android:top="1dp"
+                android:left="1dp">
+                <rotate
+                    android:fromDegrees="45"
+                    android:pivotX="50%"
+                    android:pivotY="100%">
+                    <shape android:shape="rectangle">
+                        <solid android:color="#FFFFFF"/>
+                    </shape>
+                </rotate>
+            </item>
+            <!-- White checkmark - short stroke -->
+            <item
+                android:width="3dp"
+                android:height="6dp"
+                android:gravity="center"
+                android:bottom="3dp"
+                android:right="5dp">
+                <rotate
+                    android:fromDegrees="-45"
+                    android:pivotX="0%"
+                    android:pivotY="100%">
+                    <shape android:shape="rectangle">
+                        <solid android:color="#FFFFFF"/>
+                    </shape>
+                </rotate>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Unchecked state with BLUE border -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="#1E90FF"/>
+            <solid android:color="@android:color/transparent"/>
+            <corners android:radius="3dp"/>
+            <size android:width="24dp" android:height="24dp"/>
+        </shape>
+    </item>
+</selector>
