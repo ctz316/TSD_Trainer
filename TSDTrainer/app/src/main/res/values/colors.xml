@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#FF8C00</color>
+    <color name="green">#228B22</color>
+    <color name="brown">#663300</color>
+    <color name="red">#DC143C</color>
+    <color name="blue">#1E90FF</color>
+    <color name="timer_green">#228B22</color>
+    <color name="timer_red">#FF0000</color>
+    <color name="frame_dark">#1A1A1A</color>
+    <color name="frame_darker">#2A2A2A</color>
+    <color name="red_dark">#B71C1C</color>
+</resources>

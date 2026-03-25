@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base theme with RED ActionBar -->
+    <style name="Theme.TSDTrainer.ActionBar" parent="Theme.Material3.Dark">
+        <item name="colorPrimary">#DC143C</item>
+        <item name="colorPrimaryVariant">#B71C1C</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">#DC143C</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:windowBackground">@color/black</item>
+
+        <!-- Override checkbox colors to be BLUE -->
+        <item name="colorControlActivated">#1E90FF</item>
+        <item name="colorControlNormal">#1E90FF</item>
+
+        <!-- Force ActionBar to be RED -->
+        <item name="colorSurface">#DC143C</item>
+        <item name="colorOnSurface">@color/white</item>
+    </style>
+</resources>
